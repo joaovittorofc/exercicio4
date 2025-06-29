@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EBAC Shoes</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+        }
+
+        header {
+            background-color: #2458d4;
+            color: white;
+            padding: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        nav a {
+            margin-left: 20px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 16px;
+        }
+
+        .sobre {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            margin-bottom: 32px;
+        }
+
+        .sobre img {
+            max-width: 100%;
+            width: 300px;
+            border-radius: 8px;
+            margin-right: 24px;
+        }
+
+        .produtos h2 {
+            border-bottom: 2px solid #2458d4;
+            color: #2458d4;
+            padding-bottom: 8px;
+        }
+
+        .grid-produtos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+        }
+
+        .produto {
+            background-color: white;
+            border-radius: 8px;
+            padding: 16px;
+            text-align: center;
+        }
+
+        .produto img {
+            width: 100%;
+            max-height: 160px;
+            object-fit: contain;
+            margin-bottom: 12px;
+        }
+
+        .produto h3 {
+            margin: 0 0 8px;
+        }
+
+        .produto p {
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 14px;
+            background-color: #2458d4;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .sobre {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .sobre img {
+                margin-bottom: 16px;
+                margin-right: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>EBAC Shoes</h1>
+        <nav>
+            <a href="#sobre">Sobre a loja</a>
+            <a href="#produtos">Produtos</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section id="sobre" class="sobre">
+            <img src="img/loja.jpg" alt="Foto da loja">
+            <div>
+                <h2>Sobre a loja</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore explicabo laudantium ipsum quas inventore.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore explicabo laudantium ipsum quas inventore.</p>
+            </div>
+        </section>
+
+        <section id="produtos" class="produtos">
+            <h2>Produtos</h2>
+            <div class="grid-produtos">
+                <div class="produto">
+                    <img src="img/nike.jpg" alt="Tênis Nike">
+                    <h3>Tênis Nike Modelo XPTO</h3>
+                    <p>Disponível nos tamanhos: 37, 38, 39, 40 e 42</p>
+                    <a href="#" class="btn">Adicionar ao carrinho</a>
+                </div>
+                <div class="produto">
+                    <img src="img/nike.jpg" alt="Tênis Adidas">
+                    <h3>Tênis Adidas Modelo XPTO</h3>
+                    <p>Disponível nos tamanhos: 37, 38, 39, 40 e 42</p>
+                    <a href="#" class="btn">Adicionar ao carrinho</a>
+                </div>
+                <div class="produto">
+                    <img src="img/nike.jpg" alt="Tênis Vans">
+                    <h3>Tênis Vans Modelo XPTO</h3>
+                    <p>Disponível nos tamanhos: 37, 38, 39, 40 e 42</p>
+                    <a href="#" class="btn">Adicionar ao carrinho</a>
+                </div>
+                <div class="produto">
+                    <img src="img/nike.jpg" alt="Tênis Vans Infantil">
+                    <h3>Tênis Van Infantil XPTO</h3>
+                    <p>Disponível nos tamanhos: 27, 28, 29 e 30</p>
+                    <a href="#" class="btn">Adicionar ao carrinho</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+<script>
+  // Seleciona todos os botões de "Adicionar ao carrinho"
+  const botoes = document.querySelectorAll(".btn");
+
+  botoes.forEach(botao => {
+    botao.addEventListener("click", function () {
+      const nomeProduto = this.parentElement.querySelector("h3").innerText;
+      console.log(`Produto adicionado ao carrinho: ${nomeProduto}`);
+    });
+  });
+</script>
+</body>
+
+</html>
